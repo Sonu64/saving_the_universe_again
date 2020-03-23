@@ -1,4 +1,5 @@
 def isCapable(s, able):
+    #checks if an array is capable of withstanding "able"
     charge = 1
     damage = 0
     for step in s:
@@ -15,6 +16,7 @@ def isCapable(s, able):
 
 def main(able, b):
     if isCapable(b, able):
+        #if no swaps are required
         return 0
     swaps = 0
     beam = [s for s in b]
@@ -29,6 +31,7 @@ def main(able, b):
             if isCapable(beam, able):
                 return swaps
     if isCapable(beam, able) == False:
+        #if all swaps are done but stil there's no way
         return "IMPOSSIBLE"
     return swaps
 
@@ -36,6 +39,7 @@ def main(able, b):
 if __name__ == "__main__":
     t = int(input())
     output = []
+    #store the output results in a list
     while t > 0:
         rec = input().split()
         o = main(   int(rec[0]), rec[1]    )
